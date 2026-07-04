@@ -17,11 +17,11 @@ class MyCNN(nn.Module):
         self.fc2 = nn.Linear(in_features=128, out_features=num_classes)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
-        x = self.relu(self.conv1(x))   # (B, 32, 28, 28)
-        x = self.pool(x)               # (B, 32, 14, 14)
-        x = self.relu(self.conv2(x))   # (B, 64, 14, 14)
-        x = self.pool(x)               # (B, 64,  7,  7)
-        x = x.flatten(1)               # (B, 3136)
-        x = self.relu(self.fc1(x))     # (B, 128)
-        x = self.fc2(x)                # (B, 10)
+        x = self.relu(self.conv1(x))  
+        x = self.pool(x)               
+        x = self.relu(self.conv2(x))   
+        x = self.pool(x)              
+        x = x.flatten(1)               
+        x = self.relu(self.fc1(x))     
+        x = self.fc2(x)                
         return x
