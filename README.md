@@ -1,1 +1,0 @@
-# MNIST-and-EUROSAT-dataset-training
